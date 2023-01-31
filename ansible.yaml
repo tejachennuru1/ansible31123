@@ -1,0 +1,14 @@
+--- 
+  - name: openjdk11 instatll
+    hosts: all 
+    become: yes
+    tasks: 
+      - name: openjdk11 
+        ansible.builtin.apt: 
+          name: openjdk-11-jdk 
+          state: present
+          update_cache: yes 
+      - name: dispaly jdk version 
+        debug: 
+          ver: java_version
+
