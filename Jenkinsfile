@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('vcs') {
             steps {
-                git branch:'main',url:'git@github.com:tejachennuru1/ansible31123.git'
+                git branch:'main',url:'https://github.com/tejachennuru1/ansible31123.git'
             }
         }
         stage('ansible') {
