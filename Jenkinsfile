@@ -1,19 +1,16 @@
 pipeline {
-    agent { label 'node' }
-    triggers { pollSCM('* * * * * 1') }
-        stages {
-            stage('vcs') {
-                steps {
-                    git url: 'git@github.com:tejachennuru1/ansible31123.git'
-                    branch: 'main'
-                }
-            }
-        }
-        stage {
+    agent { label: "node" }
+     triggers { pollSCM('* * * * *') }
+      stages {
+        stage(vcs) {
             steps {
-                sh 'ansible-playbook -i hosts openjdk.yaml'
-                sh 'ansible-playbook -i hosts ansible.yaml'
-            }
+                git branch:"main",url: "https://github.com/ramesh1469/ansibletask.git"
+             }
         }
-
+       stage(ansible) {
+          steps {
+            sh "ansible-playbook -i hosts ansible.yaml"
+          }
+       }
+   }
 }

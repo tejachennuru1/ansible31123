@@ -8,7 +8,4 @@
           name: openjdk-11-jdk 
           state: present
           update_cache: yes 
-      - name: dispaly jdk version 
-        debug: 
-          ver: java_version
-
+    
