@@ -11,7 +11,8 @@ pipeline {
         }
         stage {
             steps {
-                sh 'ansible-playbook -i hosts oprnjdk.yaml'
+                sh 'ansible-playbook -i hosts openjdk.yaml'
+                sh 'ansible-playbook -i hosts ansible.yaml'
             }
         }
 
